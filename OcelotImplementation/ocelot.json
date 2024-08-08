@@ -1,3 +1,79 @@
 {
+  "Routes": [
+    {
+      //Downstream
+      "DownStreamPathTemplate": "/api/Product/{id}",
+      "DownStreamScheme": "http",
+
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5058
+        }
+      ],
+
+      //UpStream
+      "UpStreamPathTemplate": "/api/gateway/Product/{id}",
+      "UpStreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+
+    {
+      //Downstream
+      "DownStreamPathTemplate": "/api/Authentication/login",
+      "DownStreamScheme": "http",
+
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5059
+        }
+      ],
+
+      //UpStream
+      "UpStreamPathTemplate": "/api/gateway/login",
+      "UpStreamHttpMethod": [ "Post" ]
+    },
+
+    {
+      //Downstream
+      "DownStreamPathTemplate": "/api/Authentication/register",
+      "DownStreamScheme": "http",
+
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5059
+        }
+      ],
+
+      //UpStream
+      "UpStreamPathTemplate": "/api/gateway/register",
+      "UpStreamHttpMethod": [ "Post" ]
+    },
+
+    {
+      //Downstream
+      "DownStreamPathTemplate": "/api/Authentication/register-admin",
+      "DownStreamScheme": "http",
+
+      "DownStreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5059
+        }
+      ],
+
+      //UpStream
+      "UpStreamPathTemplate": "/api/gateway/register-admin",
+      "UpStreamHttpMethod": [ "Post" ]
+    }
+
+  ],
+
+
+
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5255"
+  }
 
 }

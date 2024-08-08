@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProductApi.Models;
 using ProductApi.Repository;
 
 namespace ProductApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -39,9 +41,9 @@ namespace ProductApi.Controllers
             var result = _productcontext.DeleteProduct(id);
             if (result)
             {
-                return Ok($"Product with id{id} is successfully deleted");
+                return Ok($"Product with id {id} is successfully deleted");
             }
-            return NotFound($"Product is with id{id} not found");
+            return NotFound($"Product is with id {id} not found");
 
         }
        

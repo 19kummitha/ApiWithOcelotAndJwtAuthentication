@@ -104,8 +104,8 @@ namespace AuthenticationWebApi.TokenManager
             // Token generation logic
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWTAuth:Secret"]));
             var token = new JwtSecurityToken(
-                issuer: _configuration["JWTAuth:ValidIssuerURL"],
-                audience: _configuration["JWTAuth:ValidAudienceURL"],
+/*                issuer: _configuration["JWTAuth:ValidIssuerURL"],
+                audience: _configuration["JWTAuth:ValidAudienceURL"],*/
                 expires: DateTime.Now.AddHours(3),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
