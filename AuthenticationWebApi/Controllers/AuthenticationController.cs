@@ -8,14 +8,12 @@ namespace AuthenticationWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class AuthenticationController : ControllerBase
-    {
-    }
-    public class AuthController : ControllerBase
     {
         private readonly IAuthManager _authManager;
 
-        public AuthController(IAuthManager authManager)
+        public AuthenticationController(IAuthManager authManager)
         {
             _authManager = authManager;
         }
