@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ProductApi.Data;
+using ProductApi.Extensions;
 using ProductApi.Repository;
 using System.Text;
 
@@ -38,6 +39,8 @@ builder.Services.AddAuthentication(option =>
 });
 
 var app = builder.Build();
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+app.ConfigureExceptionHandler(logger);
 
 
 

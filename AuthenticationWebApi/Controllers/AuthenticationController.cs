@@ -36,7 +36,8 @@ namespace AuthenticationWebApi.Controllers
         [Route("register")]
         public async Task<IActionResult> Register([FromBody] Register model)
         {
-            return Ok(await _authManager.Register(model));
+            throw new Exception("Global Exception");
+            //return Ok(await _authManager.Register(model));
         }
 
         [HttpPost]

@@ -3,12 +3,12 @@
     {
       //Downstream
       "DownStreamPathTemplate": "/api/Product/{id}",
-      "DownStreamScheme": "https",
+      "DownStreamScheme": "http",
 
       "DownStreamHostAndPorts": [
         {
-          "Host": "kotiproduct.azurewebsites.net",
-          "Port": 443
+          "Host": "localhost",
+          "Port": 5058
         }
       ],
 
@@ -20,12 +20,12 @@
     {
       //Downstream
       "DownStreamPathTemplate": "/api/Authentication/login",
-      "DownStreamScheme": "https",
+      "DownStreamScheme": "http",
 
       "DownStreamHostAndPorts": [
         {
-          "Host": "kotiauthocelot.azurewebsites.net",
-          "Port": 443
+          "Host": "localhost",
+          "Port": 5059
         }
       ],
 
@@ -37,12 +37,12 @@
     {
       //Downstream
       "DownStreamPathTemplate": "/api/Authentication/register",
-      "DownStreamScheme": "https",
+      "DownStreamScheme": "http",
 
       "DownStreamHostAndPorts": [
         {
-          "Host": "kotiauthocelot.azurewebsites.net",
-          "Port": 443
+          "Host": "localhost",
+          "Port": 5059
         }
       ],
 
@@ -54,12 +54,12 @@
     {
       //Downstream
       "DownStreamPathTemplate": "/api/Authentication/register-admin",
-      "DownStreamScheme": "https",
+      "DownStreamScheme": "http",
 
       "DownStreamHostAndPorts": [
         {
-          "Host": "kotiauthocelot.azurewebsites.net",
-          "Port": 443
+          "Host": "localhost",
+          "Port": 5059
         }
       ],
 
@@ -73,7 +73,7 @@
 
 
   "GlobalConfiguration": {
-    "BaseUrl": "https://kotiocelot.azurewebsites.net/"
+    "BaseUrl": "http://localhost:5255/"
   }
 
 }

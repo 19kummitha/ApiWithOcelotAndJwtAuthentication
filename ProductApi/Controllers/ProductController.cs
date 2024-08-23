@@ -21,6 +21,7 @@ namespace ProductApi.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
+            throw new Exception("GLobal Exception");
             var result = _productcontext.GetAllProducts();
             if (result.Count() == 0)
             {

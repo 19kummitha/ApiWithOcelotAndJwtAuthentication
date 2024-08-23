@@ -1,4 +1,5 @@
 using AuthenticationWebApi.Data;
+using AuthenticationWebApi.ExtensionHandling;
 using AuthenticationWebApi.TokenManager;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 builder.Services.AddControllers();
 
 var app = builder.Build();
+var logger = app.Services.GetRequiredService<ILogger<Program>>();
+app.ConfigureExceptionHandler(logger);
 
 // Configure the HTTP request pipeline.
 
